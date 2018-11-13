@@ -5,12 +5,19 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.4'
-        classpath 'com.google.gms:google-services:4.1.0'
+        classpath 'com.google.gms:google-services:4.2.0'
+        // Add dependency
+        classpath 'io.fabric.tools:gradle:1.26.1'
     }
 }
+
+
 
 plugins {
     id 'com.github.ben-manes.versions' version '0.17.0'
@@ -21,6 +28,10 @@ allprojects {
         google()
         jcenter()
         mavenLocal()
+        // Add repository
+        maven {
+            url 'https://maven.google.com/'
+        }
     }
 
     // See: https://github.com/ben-manes/gradle-versions-plugin
@@ -41,3 +52,5 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+

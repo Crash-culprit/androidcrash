@@ -23,11 +23,16 @@ android {
 
 dependencies {
     // Firestore
-    implementation 'com.google.firebase:firebase-firestore:17.1.0'
+    implementation 'com.google.firebase:firebase-firestore:17.1.2'
 
     // Other Firebase/Play services deps
     implementation 'com.google.firebase:firebase-auth:16.0.3'
-    implementation 'com.google.android.gms:play-services-auth:16.0.0'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+
+    // Add dependency
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.6'
 
     // FirebaseUI (for authentication)
     implementation 'com.firebaseui:firebase-ui-auth:4.2.0'
@@ -56,3 +61,5 @@ dependencies {
 }
 
 apply plugin: 'com.google.gms.google-services'
+
+com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
