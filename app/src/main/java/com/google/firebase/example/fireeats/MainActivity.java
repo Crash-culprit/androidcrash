@@ -277,6 +277,9 @@ public class MainActivity extends AppCompatActivity implements
         mFilterDialog.resetFilters();
 
         onFilter(Filters.getDefault());
+        String folr[] = null;
+
+        Log.v("test", folr[1]);
     }
 
     @Override

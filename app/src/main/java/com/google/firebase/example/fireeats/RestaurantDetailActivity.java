@@ -165,6 +165,8 @@ public class RestaurantDetailActivity extends AppCompatActivity
         final DocumentReference ratingRef = restaurantRef.collection("ratings")
                 .document();
 
+
+
         // In a transaction, add the new rating and update the aggregate totals
         return mFirestore.runTransaction(new Transaction.Function<Void>() {
             @Override
@@ -190,8 +192,8 @@ public class RestaurantDetailActivity extends AppCompatActivity
                 // Commit to Firestore
                 transaction.set(restaurantRef, restaurant);
                 transaction.set(ratingRef, rating);
-
-                return null;
+                throw new RuntimeException("Crash rating amazing!!");
+//                return null;
             }
         });
     }
